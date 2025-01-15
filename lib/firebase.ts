@@ -16,14 +16,6 @@ const firebaseConfig = {
     appId: process.env.FIREBASE_APP_ID!,
     measurementId: process.env.FIREBASE_MEASUREMENT_ID!
 
-    // apiKey: "AIzaSyAubvCCz6rmbvxZCZir8AZytImSdGJzd88",
-    // authDomain: "thedictator-78cb1.firebaseapp.com",
-    // projectId: "thedictator-78cb1",
-    // storageBucket: "thedictator-78cb1.appspot.com",
-    // messagingSenderId: "36069352041",
-    // appId: "1:36069352041:web:53d5ef374e7e30e224f8f8",
-    // measurementId: "G-WQ3EBCWDH1"
-
 };
 
 // Initialize Firebase
