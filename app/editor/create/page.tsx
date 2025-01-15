@@ -12,7 +12,6 @@ export default async function CreateArticlePage() {
 
   const category = await prisma.category.findMany();
   const tag = await prisma.tag.findMany();
-  const article = "";
 
   const dbUser = await prisma.user.findUnique({
     where: { clerkId: user.id },

@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import prisma from "@/lib/prisma";
 import ArticleFilters from "@/components/ArticleFilters";
 import Link from "next/link";
-import { Article } from "@prisma/client";
 
 export default async function ArticlesPage({
   searchParams,

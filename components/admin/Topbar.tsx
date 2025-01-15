@@ -1,5 +1,6 @@
 // components/Admin/Topbar.tsx
 import { Bell, Search } from "lucide-react";
+import Image from "next/image";
 
 const Topbar = () => {
   return (
@@ -14,7 +15,9 @@ const Topbar = () => {
       </div>
       <div className="flex items-center space-x-4">
         <Bell className="w-5 h-5 text-gray-600" />
-        <img
+        <Image
+          width={40}
+          height={40}
           src="/profile-placeholder.png"
           alt="User"
           className="w-8 h-8 rounded-full"

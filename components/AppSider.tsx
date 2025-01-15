@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Building2, Home, Inbox, MicVocal, Palette } from "lucide-react";
 import { RiAdvertisementLine } from "react-icons/ri";
 import { MdOutlineStyle } from "react-icons/md";

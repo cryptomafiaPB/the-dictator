@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import prisma from "@/lib/prisma";
 import Link from "next/link";
 
@@ -30,7 +31,9 @@ export default async function SearchPage({
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Search Results for "{query}"</h1>
+      <h1 className="text-2xl font-bold mb-4">
+        Search Results for &quot;{query}&quot;
+      </h1>
       {articles.length > 0 ? (
         <div className="space-y-4">
           {articles.map((article: any) => (

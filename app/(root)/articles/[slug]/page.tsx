@@ -1,14 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import prisma from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server";
 import CommentForm from "@/components/CommentForm";
-import { Button } from "@/components/ui/button";
 import Like from "@/components/Like";
 import DisLike from "@/components/DisLike";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { format, getDate } from "date-fns";
-import { Eye, Tag, View } from "lucide-react";
+import { format } from "date-fns";
 
 // SEO
 

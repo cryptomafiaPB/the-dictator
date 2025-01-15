@@ -1,12 +1,6 @@
 import { RiTimeZoneLine } from "react-icons/ri";
 import Link from "next/link";
-import {
-  SignedIn,
-  SignedOut,
-  SignOutButton,
-  UserButton,
-  useUser,
-} from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignOutButton, UserButton } from "@clerk/nextjs";
 import { GiWireframeGlobe } from "react-icons/gi";
 
 export function Header() {

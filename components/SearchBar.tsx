@@ -4,14 +4,13 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Button } from "./ui/button";
-import { ChevronsUpDown, Search } from "lucide-react";
-import { Command, CommandInput } from "./ui/command";
+import { Search } from "lucide-react";
+import { Command } from "./ui/command";
 
 export default function SearchBar() {
   const [query, setQuery] = useState("");
   const router = useRouter();
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("");
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();

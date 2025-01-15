@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { ActionId, ActionImpl } from "kbar";
 import * as React from "react";
 

@@ -1,18 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // "use client";
 import prisma from "@/lib/prisma";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 
 export default async function TagsPage() {
   const tags = await prisma.tag.findMany();
-
-  const handleDelete = async (id: string) => {
-    "use server";
-
-    await prisma.category.delete({ where: { id } });
-    redirect("/admin/tags");
-  };
 
   return (
     <div className="container mx-auto p-4">

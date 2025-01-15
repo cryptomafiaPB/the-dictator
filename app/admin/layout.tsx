@@ -1,6 +1,4 @@
 import dynamic from "next/dynamic";
-import AppSidebarDashboard from "@/components/dashboard-layout/AppSiderDashboard";
-import HeaderDashboard from "@/components/dashboard-layout/Header";
 import KBar from "@/components/Kbar/Kbar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 

@@ -29,13 +29,6 @@ export default async function EditTagPage({
     redirect("/admin/tags");
   };
 
-  const handleDelete = async (id: string) => {
-    "use server";
-
-    await prisma.category.delete({ where: { id } });
-    redirect("/admin/categories");
-  };
-
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Edit Tag</h1>
@@ -50,14 +43,7 @@ export default async function EditTagPage({
             className="w-full p-2 border rounded"
           />
         </div>
-        {/* <div>
-          <label className="block text-sm font-medium">Description</label>
-          <textarea
-            name="description"
-            defaultValue={tag.name || ""}
-            className="w-full p-2 border rounded"
-          />
-        </div> */}
+
         <Button type="submit">Update Tags</Button>
       </form>
     </div>

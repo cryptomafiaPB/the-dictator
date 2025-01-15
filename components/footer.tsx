@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Globe } from "lucide-react";
 import Link from "next/link";
 import { GiSpy } from "react-icons/gi";
@@ -131,7 +132,7 @@ export function Footer() {
           </div>
           <div className="   flex flex-col   gap-4 font-semibold uppercase">
             <div className=" bg-[#181618]  text-[#2EFF9B] p-2">Resources</div>
-            <a
+            <Link
               href="/"
               className=" flex  group items-center transition hover:translate-x-2"
             >
@@ -145,8 +146,8 @@ export function Footer() {
                 <path d="m0 0 3 3v3L0 9V0Z"></path>
               </svg>
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/articles"
               className=" flex  group items-center transition hover:translate-x-2"
             >
@@ -160,8 +161,8 @@ export function Footer() {
                 <path d="m0 0 3 3v3L0 9V0Z"></path>
               </svg>
               Articles
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://community.koyeb.com"
               className=" flex  group items-center transition hover:translate-x-2"
             >
@@ -175,8 +176,8 @@ export function Footer() {
                 <path d="m0 0 3 3v3L0 9V0Z"></path>
               </svg>
               community
-            </a>
-            <a
+            </Link>
+            <Link
               href="/docs/api"
               className=" flex  group items-center transition hover:translate-x-2"
             >
@@ -190,8 +191,8 @@ export function Footer() {
                 <path d="m0 0 3 3v3L0 9V0Z"></path>
               </svg>
               api
-            </a>
-            <a
+            </Link>
+            <Link
               href="/deploy"
               className=" flex  group items-center transition hover:translate-x-2"
             >
@@ -205,8 +206,8 @@ export function Footer() {
                 <path d="m0 0 3 3v3L0 9V0Z"></path>
               </svg>
               deploy
-            </a>
-            <a
+            </Link>
+            <Link
               href="/blog/koyeb-for-startups-accelerate-with-credits-for-high-performance-infrastructure"
               className=" flex  group items-center transition hover:translate-x-2"
             >
@@ -220,8 +221,8 @@ export function Footer() {
                 <path d="m0 0 3 3v3L0 9V0Z"></path>
               </svg>
               startup program
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://status.koyeb.com"
               className=" flex  group items-center transition hover:translate-x-2"
             >
@@ -235,7 +236,7 @@ export function Footer() {
                 <path d="m0 0 3 3v3L0 9V0Z"></path>
               </svg>
               system status
-            </a>
+            </Link>
           </div>
           <div className="   flex flex-col   gap-4 font-semibold uppercase">
             <div className=" bg-[#181618]  text-[#2EFF9B] p-2">Company</div>

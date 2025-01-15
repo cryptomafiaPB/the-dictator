@@ -1,5 +1,4 @@
 import { NewsContent } from "@/components/news-content";
-import ArticlesPage from "./articles/page";
 import prisma from "@/lib/prisma";
 
 export default async function Home() {

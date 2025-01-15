@@ -29,13 +29,6 @@ export default async function EditCategoryPage({
     redirect("/admin/categories");
   };
 
-  const handleDelete = async (id: string) => {
-    "use server";
-
-    await prisma.category.delete({ where: { id } });
-    redirect("/admin/categories");
-  };
-
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Edit Category</h1>

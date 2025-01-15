@@ -1,8 +1,6 @@
-import { ArrowUpDown, MoreHorizontal, Search } from "lucide-react";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-
-import { DataTablePagination } from "@/components/data-table-pagination";
 
 import { ColumnDef } from "@tanstack/react-table";
 import { User } from "@/types/index";
@@ -118,7 +116,7 @@ const columns: ColumnDef<User>[] = [
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>View user details</DropdownMenuItem>
-            <DropdownMenuItem>View user's articles</DropdownMenuItem>
+            <DropdownMenuItem>View user&#39;s articles</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );

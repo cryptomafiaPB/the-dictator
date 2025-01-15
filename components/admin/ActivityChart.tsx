@@ -9,8 +9,6 @@ import {
   PointElement,
   LineElement,
   ArcElement,
-  BarElement,
-  Title,
   Tooltip,
   Legend,
 } from "chart.js";

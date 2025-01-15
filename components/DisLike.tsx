@@ -1,6 +1,5 @@
 "use client";
 
-import { User } from "@clerk/nextjs/server";
 import { ThumbsDownIcon } from "lucide-react";
 import { useState } from "react";
 
