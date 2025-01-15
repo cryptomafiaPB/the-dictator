@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-"use client";
-import { Article } from "@/types";
+// import { Article } from "@/types";
 // import { Article } from "@prisma/client";
+import { Article } from "@/types";
 import Link from "next/link";
 
 export default function ArticleList({ articles }: { articles: Article[] }) {

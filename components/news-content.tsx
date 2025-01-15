@@ -7,6 +7,7 @@ import { IoMdStar } from "react-icons/io";
 import { PiShareFatLight } from "react-icons/pi";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+// import { Article } from "@prisma/client";
 import { Article } from "@/types";
 
 dayjs.extend(relativeTime);
@@ -32,13 +33,6 @@ export function NewsContent({ latest }: { latest: Article[] }) {
     return html.replace(/<[^>]*>?/gm, "");
   };
 
-  // const stripHtml = (html: string) => {
-  //   const div = document.createElement("div");
-  //   div.innerHTML = html;
-  //   return div.textContent || div.innerText || "";
-  // };
-
-  // console.log(latest)
   return (
     <div className="space-y-8 font-test text-dark-grey">
       {/* Top News Grid */}

@@ -59,32 +59,32 @@ export interface Report {
     updatedAt: Date;
 }
 
-export type Status = 'draft' | 'pending' | 'published' | 'rejected';
+// export type Status = 'draft' | 'pending' | 'published' | 'rejected';
 
-export interface Article {
-    id: string;
-    title: string;
-    content: string;
-    slug: string;
-    image?: string;
-    published: boolean;
-    status: Status;
-    shares: number;
-    flagged: boolean;
-    createdAt: Date;
-    updatedAt: Date;
-    views: number;
-    likes: number;
-    dislikes: number;
-    authorId: string;
-    author: User;
-    categoriesIDs: string[];
-    categories: Category[];
-    tagsIDs: string[];
-    tags: Tag[];
-    comments: Comment[];
-    reports: Report[];
-}
+// export interface Article {
+//     id: string;
+//     title: string;
+//     content: string;
+//     slug: string;
+//     image?: string;
+//     published: boolean;
+//     status: Status;
+//     shares: number;
+//     flagged: boolean;
+//     createdAt: Date;
+//     updatedAt: Date;
+//     views: number;
+//     likes: number;
+//     dislikes: number;
+//     authorId: string;
+//     author: User;
+//     categoriesIDs: string[];
+//     categories: Category[];
+//     tagsIDs: string[];
+//     tags: Tag[];
+//     comments: Comment[];
+//     reports: Report[];
+// }
 
 export type Role = "admin" | 'editor' | 'reader';
 
@@ -99,3 +99,46 @@ export interface Activity {
         email: string;
     };
 }
+
+import { Prisma, Status } from "@prisma/client"
+
+export type Article = {
+    id: string
+    title: string
+    content: string
+    slug: string
+    image: string | null
+    published: boolean
+    status: Status
+    shares: number
+    flagged: boolean
+    createdAt: Date
+    updatedAt: Date
+    views: number
+    likes: number
+    dislikes: number
+    authorId: string
+    categoriesIDs: string[]
+    tagsIDs: string[]
+    author?: {
+        name: string
+        email: string
+        image?: string
+    }
+    categories?: {
+        id: string
+        name: string
+    }[]
+    tags?: {
+        id: string
+        name: string
+    }[]
+}
+
+export type ArticleWithRelations = Prisma.ArticleGetPayload<{
+    include: {
+        author: true
+        categories: true
+        tags: true
+    }
+}>
