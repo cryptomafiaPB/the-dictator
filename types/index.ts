@@ -59,7 +59,7 @@ export interface Report {
     updatedAt: Date;
 }
 
-// export type Status = 'draft' | 'pending' | 'published' | 'rejected';
+export type Status = 'draft' | 'pending' | 'published' | 'rejected';
 
 // export interface Article {
 //     id: string;
@@ -100,7 +100,7 @@ export interface Activity {
     };
 }
 
-import { Prisma, Status } from "@prisma/client"
+import { Prisma } from "@prisma/client"
 
 export type Article = {
     id: string
