@@ -43,7 +43,7 @@ const users: User[] = [
     id: "2",
     name: "Jane Smith",
     email: "jane@example.com",
-    role: "writer",
+    role: "reader",
     status: "active",
     articles: 8,
     lastLogin: "2023-06-02",
