@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { User } from "@prisma/client";
+// import { User } from "@prisma/client";
 import { useEffect, useState } from "react";
 import { Skeleton } from "../ui/skeleton";
+import { User } from "@/types";
 
 const UserManagement = () => {
   const [users, setUsers] = useState<User[]>();

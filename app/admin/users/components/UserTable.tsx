@@ -2,9 +2,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import EditUserModal from "./EditUserModal";
-import { User } from "@prisma/client";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
+import { User } from "@/types";
 
 const UserTable = () => {
   const [users, setUsers] = useState<User[]>();
