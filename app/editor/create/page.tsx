@@ -58,7 +58,7 @@ export default async function CreateArticlePage() {
       <h1 className="text-2xl font-bold mb-4">Create Article</h1>
       <ArticleEditor
         onSave={handleSave}
-        initialContent={article}
+        initialContent={undefined}
         categories={category}
         tags={tag}
       />
