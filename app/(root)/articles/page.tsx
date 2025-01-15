@@ -47,10 +47,10 @@ export default async function ArticlesPage({
                   <div className="mt-2">
                     <span className="text-sm text-gray-600">
                       Categories:{" "}
-                      {article.categories.map((c) => c.name).join(", ")}
+                      {article.categories.map((c: any) => c.name).join(", ")}
                     </span>
                     <span className="text-sm text-gray-600 ml-4">
-                      Tags: {article.tags.map((t) => t.name).join(", ")}
+                      Tags: {article.tags.map((t: any) => t.name).join(", ")}
                     </span>
                   </div>
                 </Link>
