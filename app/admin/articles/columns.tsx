@@ -13,10 +13,10 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { Article } from "@/types/index";
+import { ArticleColumn } from "@/types/index";
 // ...existing imports...
 
-const columns: ColumnDef<Article>[] = [
+const columns: ColumnDef<ArticleColumn>[] = [
   {
     accessorKey: "title",
     header: "Title",

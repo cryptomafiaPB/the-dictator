@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { Article } from "@prisma/client";
+import { Article } from "@/types";
+// import { Article } from "@prisma/client";
 import { useEffect, useState } from "react";
 
 const MostViewedArticles = () => {

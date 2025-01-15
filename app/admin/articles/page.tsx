@@ -24,10 +24,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { DataTablePagination } from "@/components/data-table-pagination";
-import { Article } from "@/types";
+import { ArticleColumn } from "@/types";
 import columns from "./columns";
 
-const articles: Article[] = [
+const articles: ArticleColumn[] = [
   {
     id: "1",
     title: "The Future of AI in Journalism",

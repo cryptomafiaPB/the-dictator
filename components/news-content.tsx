@@ -1,12 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { Article } from "@prisma/client";
+// import { Article } from "@prisma/client";
 import ArticleList from "./ArticleList";
 import { IoMdStar } from "react-icons/io";
 import { PiShareFatLight } from "react-icons/pi";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { Article } from "@/types";
 
 dayjs.extend(relativeTime);
 

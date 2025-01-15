@@ -1,6 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import prisma from "@/lib/prisma";
-import { Article } from "@prisma/client";
+
+interface Article {
+    id: string;
+    title: string;
+    content: string;
+    published: boolean;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
 
 export async function GET(req: Request) {
     try {

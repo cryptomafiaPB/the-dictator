@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { Activity } from "@prisma/client";
+// import { Activity } from "@prisma/client";
 import { useState, useEffect } from "react";
 import { Skeleton } from "../ui/skeleton";
+import { Activity } from "@/types";
 
 const ActivityLog = () => {
   const [logs, setLogs] = useState<Activity[]>();

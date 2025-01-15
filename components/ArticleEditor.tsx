@@ -29,8 +29,9 @@ import { Skeleton } from "./ui/skeleton";
 import { FaSpinner } from "react-icons/fa";
 import { storage } from "@/lib/firebase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { Article } from "@prisma/client";
+// import { Article } from "@prisma/client";
 import Image from "next/image";
+import { Article } from "@/types";
 
 export default function ArticleEditor({
   onSave,

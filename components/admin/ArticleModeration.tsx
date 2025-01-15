@@ -2,9 +2,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { Article } from "@prisma/client";
+// import { Article } from "@prisma/client";
 import { useEffect, useState } from "react";
 import { Skeleton } from "../ui/skeleton";
+import { Article } from "@/types";
 
 const ArticleModeration = () => {
   const [articles, setArticles] = useState<Article[]>();
