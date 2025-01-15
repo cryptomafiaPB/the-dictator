@@ -205,7 +205,7 @@ export default async function ArticlePage({
               </p>
             )}
             <div className="mt-4 space-y-4">
-              {article.comments.map((comment) => (
+              {article.comments.map((comment: any) => (
                 <div
                   key={comment.id}
                   className="border p-2 md:p-4 rounded flex gap-3"
