@@ -117,7 +117,8 @@ export default async function ArticlePage({
           {/* <div className="flex h-12 items-center justify-center rounded-lg border border-solid border-[#18161833] sm:h-48"> */}
           <div className="flex flex-col gap-3 lg:order-1">
             <span className="text-sm font-mono uppercase">
-              Categories: {article.categories.map((c) => c.name).join(", ")}
+              Categories:{" "}
+              {article.categories.map((c: any) => c.name).join(", ")}
             </span>
             <span className="text-sm font-mono uppercase">
               Tags: {article.tags.map((t) => t.name).join(", ")}
