@@ -44,7 +44,7 @@ const ActivityLog = () => {
         </thead>
         <tbody>
           {logs &&
-            logs.map((log) => (
+            logs.map((log: any) => (
               <tr key={log.id}>
                 <td className="py-2 px-4">{log.action}</td>
                 <td className="py-2 px-4">

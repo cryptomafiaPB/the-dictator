@@ -24,7 +24,7 @@ export default function ArticleFilters({
           className="w-full p-2 border rounded"
         >
           <option value="">All Categories</option>
-          {categories.map((category) => (
+          {categories.map((category: any) => (
             <option key={category.id} value={category.name}>
               {category.name}
             </option>
@@ -38,7 +38,7 @@ export default function ArticleFilters({
           className="w-full p-2 border rounded"
         >
           <option value="">All Tags</option>
-          {tags.map((tag) => (
+          {tags.map((tag: any) => (
             <option key={tag.id} value={tag.name}>
               {tag.name}
             </option>

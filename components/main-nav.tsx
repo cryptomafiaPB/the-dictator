@@ -28,7 +28,7 @@ export function MainNav() {
             <SidebarTrigger />
           </div>
           <div className="hidden items-center space-x-6 md:flex">
-            {categories.map((category) => (
+            {categories.map((category: any) => (
               <Link
                 key={category.value}
                 href="#"

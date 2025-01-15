@@ -97,7 +97,7 @@ const UserTable = () => {
               </td>
             </tr>
           ) : (
-            users!.map((user) => (
+            users!.map((user: any) => (
               <tr key={user.id}>
                 <td className="p-2 border-b">{user.name || "N/A"}</td>
                 <td className="p-2 border-b">{user.email}</td>

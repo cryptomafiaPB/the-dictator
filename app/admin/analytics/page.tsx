@@ -39,7 +39,7 @@ export default async function AnalyticsPage() {
         <div className="border p-4 rounded">
           <h2 className="text-lg font-bold mb-4">Popular Articles</h2>
           <div className="space-y-4">
-            {popularArticles.map((article) => (
+            {popularArticles.map((article: any) => (
               <div key={article.id} className="border p-4 rounded">
                 <h3 className="text-xl font-bold">{article.title}</h3>
                 <p>{article.content.substring(0, 100)}...</p>
@@ -51,7 +51,7 @@ export default async function AnalyticsPage() {
         <div className="border p-4 rounded">
           <h2 className="text-lg font-bold mb-4">Recent User Activity</h2>
           <div className="space-y-4">
-            {recentActivity.map((user) => (
+            {recentActivity.map((user: any) => (
               <div key={user.id} className="border p-4 rounded">
                 <h3 className="text-xl font-bold">{user.name}</h3>
                 <p className="text-sm text-gray-600">

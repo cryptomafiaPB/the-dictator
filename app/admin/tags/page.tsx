@@ -21,7 +21,7 @@ export default async function TagsPage() {
         <Button>Create New Tags</Button>
       </Link>
       <div className="mt-4 space-y-4">
-        {tags.map((tag) => (
+        {tags.map((tag: any) => (
           <div key={tag.id} className="border p-4 rounded">
             <h2 className="text-xl font-bold">{tag.name}</h2>
             {/* <p>{tag.description}</p> */}

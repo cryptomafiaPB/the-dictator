@@ -71,7 +71,7 @@ export default function ArticleList({ articles }: { articles: Article[] }) {
           </div>
           <hr className="border-dark-grey border mt-0" />
         </div>
-        {articles.map((article, index) => (
+        {articles.map((article: any, index: any) => (
           <div
             key={index}
             className="flex items-start space-x-4 flex-col font-sans"

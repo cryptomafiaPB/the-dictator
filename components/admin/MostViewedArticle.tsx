@@ -21,7 +21,7 @@ const MostViewedArticles = () => {
       <h2 className="text-xl font-semibold mb-4">Top 5 Most Viewed Articles</h2>
       <ul className="space-y-2 gap-2 flex flex-col">
         {articles &&
-          articles.map((article, index) => (
+          articles.map((article: any, index: any) => (
             <li key={index} className="flex justify-between">
               <span className="inline-flex space-x-2 gap-1">
                 <span className="">{(index + 1).toString()}.</span>

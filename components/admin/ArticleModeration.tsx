@@ -60,7 +60,7 @@ const ArticleModeration = () => {
         </thead>
         <tbody className="divide-y divide-gray-200 border-b">
           {Array.isArray(articles) &&
-            articles.map((article) => (
+            articles.map((article: any) => (
               <tr className="border-b border-gray-200" key={article.id}>
                 <td className={`py-2 px-4`}>
                   <span className="lg:hidden">

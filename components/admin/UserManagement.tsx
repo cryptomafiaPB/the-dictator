@@ -72,7 +72,7 @@ const UserManagement = () => {
         </thead>
         <tbody>
           {Array.isArray(users) &&
-            users.map((user) => (
+            users.map((user: any) => (
               <tr key={user.id}>
                 <td className="py-2 px-4">{user.name}</td>
                 <td className="py-2 px-4">{user.role}</td>

@@ -32,7 +32,7 @@ export default async function EditorDashboard() {
         <Button>Create New Article</Button>
       </Link>
       <div className="mt-4 space-y-4">
-        {articles.map((article) => (
+        {articles.map((article: any) => (
           <div key={article.id} className="border p-4 rounded">
             <h2 className="text-xl font-bold">{article.title}</h2>
             <p>{article.content.substring(0, 100)}...</p>

@@ -38,7 +38,7 @@ const ResultItem = React.forwardRef(
           <div className="flex flex-col">
             <div>
               {ancestors.length > 0 &&
-                ancestors.map((ancestor) => (
+                ancestors.map((ancestor: any) => (
                   <React.Fragment key={ancestor.id}>
                     <span className="mr-2 opacity-50">{ancestor.name}</span>
                     <span className="mr-2">&rsaquo;</span>

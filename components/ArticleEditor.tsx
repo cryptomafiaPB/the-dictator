@@ -225,7 +225,7 @@ export default function ArticleEditor({
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    {categories.map((category) => (
+                    {categories.map((category: any) => (
                       <SelectItem key={category.id} value={category.id}>
                         {category.name}
                       </SelectItem>
@@ -259,7 +259,7 @@ export default function ArticleEditor({
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    {tags.map((tag) => (
+                    {tags.map((tag: any) => (
                       <SelectItem key={tag.id} value={tag.id}>
                         {tag.name}
                       </SelectItem>

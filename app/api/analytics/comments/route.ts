@@ -16,7 +16,7 @@ export async function GET() {
         },
     });
 
-    const formattedComments = commentsByDay.map((entry) => ({
+    const formattedComments = commentsByDay.map((entry: any) => ({
         date: entry.createdAt.toISOString().split("T")[0],
         count: entry._count,
     }));

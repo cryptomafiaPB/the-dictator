@@ -1,6 +1,7 @@
 import prisma from "@/lib/prisma";
 import ArticleFilters from "@/components/ArticleFilters";
 import Link from "next/link";
+import { Article } from "@prisma/client";
 
 export default async function ArticlesPage({
   searchParams,
@@ -36,7 +37,7 @@ export default async function ArticlesPage({
         <div className="md:col-span-3">
           {articles.length > 0 ? (
             <div className="space-y-4">
-              {articles.map((article) => (
+              {articles.map((article: any) => (
                 <Link
                   href={`/articles/${article.slug}`}
                   key={article.id}

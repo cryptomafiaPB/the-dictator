@@ -33,7 +33,7 @@ export default async function SearchPage({
       <h1 className="text-2xl font-bold mb-4">Search Results for "{query}"</h1>
       {articles.length > 0 ? (
         <div className="space-y-4">
-          {articles.map((article) => (
+          {articles.map((article: any) => (
             <div key={article.id} className="border p-4 rounded">
               <h2 className="text-xl font-bold">
                 <Link href={`/articles/${article.slug}`}>{article.title}</Link>

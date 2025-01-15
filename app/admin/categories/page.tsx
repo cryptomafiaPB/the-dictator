@@ -21,7 +21,7 @@ export default async function CategoriesPage() {
         <Button>Create New Category</Button>
       </Link>
       <div className="mt-4 space-y-4">
-        {categories.map((category) => (
+        {categories.map((category: any) => (
           <div key={category.id} className="border p-4 rounded">
             <h2 className="text-xl font-bold">{category.name}</h2>
             <p>{category.description}</p>
