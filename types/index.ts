@@ -100,7 +100,7 @@ export interface Activity {
     };
 }
 
-import { Prisma } from "@prisma/client"
+// import { Prisma } from "@prisma/client"
 
 export type Article = {
     id: string
@@ -135,10 +135,10 @@ export type Article = {
     }[]
 }
 
-export type ArticleWithRelations = Prisma.ArticleGetPayload<{
-    include: {
-        author: true
-        categories: true
-        tags: true
-    }
-}>
+// export type ArticleWithRelations = Prisma.ArticleGetPayload<{
+//     include: {
+//         author: true
+//         categories: true
+//         tags: true
+//     }
+// }>
