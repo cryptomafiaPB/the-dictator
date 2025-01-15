@@ -1,0 +1,197 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  clerkId     String     @unique
+  email       String     @unique
+  name        String?
+  role        Role       @default(reader)
+  isBanned    Boolean    @default(false)
+  activityLog Activity[]
+
+  lastLogin DateTime? // Add this field
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  articles Article[]
+  comments Comment[]
+  Report   Report[]
+}
+
+model Article {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  content   String
+  slug      String   @unique
+  image     String?
+  published Boolean  @default(false)
+  status    Status   @default(draft)
+  shares    Int      @default(0)
+  flagged   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  views     Int      @default(0) // Add this field
+  likes     Int      @default(0) // Add this field
+  dislikes  Int      @default(0) // Add this field
+
+  authorId      String     @db.ObjectId
+  author        User       @relation(fields: [authorId], references: [id])
+  categoriesIDs String[]   @db.ObjectId
+  categories    Category[] @relation(fields: [categoriesIDs], references: [id])
+  tagsIDs       String[]   @db.ObjectId
+  tags          Tag[]      @relation(fields: [tagsIDs], references: [id])
+  comments      Comment[]
+  reports       Report[]
+}
+
+model Category {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  name        String    @unique
+  description String?
+  articlesIDs String[]  @db.ObjectId
+  articles    Article[] @relation(fields: [articlesIDs], references: [id])
+}
+
+model Tag {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  name        String    @unique
+  articlesIDs String[]  @db.ObjectId
+  articles    Article[] @relation(fields: [articlesIDs], references: [id])
+}
+
+model Comment {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  flagged   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  articleId String   @db.ObjectId
+  article   Article  @relation(fields: [articleId], references: [id])
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+  reports   Report[]
+}
+
+model Report {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  reason    String
+  resolved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  articleId  String?  @db.ObjectId
+  article    Article? @relation(fields: [articleId], references: [id])
+  commentId  String?  @db.ObjectId
+  comment    Comment? @relation(fields: [commentId], references: [id])
+  reportedBy String   @db.ObjectId
+  user       User     @relation(fields: [reportedBy], references: [id])
+}
+
+model Activity {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  action    String
+  timestamp DateTime @default(now())
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Analytics {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  key        String    @unique // Format: analytics::namespace::date or analytics::namespace
+  count      Int // Tracks number of events
+  event      String // JSON stringified event object
+  expiration DateTime? // Optional expiration date for non-persistent events
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+enum Role {
+  admin
+  editor
+  reader
+}
+
+enum Status {
+  draft
+  pending
+  published
+  rejected
+}
+
+// model User {
+//   id        String     @id @default(auto()) @map("_id") @db.ObjectId
+//   clerkId   String     @unique
+//   name      String
+//   email     String     @unique
+//   role      String     @default("reader")
+//   createdAt DateTime   @default(now())
+//   updatedAt DateTime   @updatedAt
+//   articles  Article[]
+//   comments  Comment[]
+//   reactions Reaction[]
+// }
+
+// model Article {
+//   id         String     @id @default(auto()) @map("_id") @db.ObjectId
+//   title      String
+//   content    String
+//   slug       String     @unique
+//   image      String?
+//   published  Boolean    @default(false)
+//   authorId   String     @db.ObjectId
+//   author     User       @relation(fields: [authorId], references: [id])
+//   categories String[]
+//   tags       String[]
+//   comments   Comment[]
+//   reactions  Reaction[]
+//   createdAt  DateTime   @default(now())
+//   updatedAt  DateTime   @updatedAt
+// }
+
+// model Comment {
+//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+//   articleId String   @db.ObjectId
+//   article   Article  @relation(fields: [articleId], references: [id])
+//   userId    String   @db.ObjectId
+//   user      User     @relation(fields: [userId], references: [id])
+//   content   String
+//   createdAt DateTime @default(now())
+// }
+
+// model Reaction {
+//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+//   articleId String   @db.ObjectId
+//   article   Article  @relation(fields: [articleId], references: [id])
+//   userId    String   @db.ObjectId
+//   user      User     @relation(fields: [userId], references: [id])
+//   type      String // e.g., "like", "dislike"
+//   createdAt DateTime @default(now())
+// }
+
+// model Category {
+//   id          String   @id @default(auto()) @map("_id") @db.ObjectId
+//   name        String   
+//   description String?
+//   createdAt   DateTime @default(now())
+// }
+
+// model Tag {
+//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+//   name      String   @unique
+//   createdAt DateTime @default(now())
+// }
