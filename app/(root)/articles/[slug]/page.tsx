@@ -121,7 +121,7 @@ export default async function ArticlePage({
               {article.categories.map((c: any) => c.name).join(", ")}
             </span>
             <span className="text-sm font-mono uppercase">
-              Tags: {article.tags.map((t) => t.name).join(", ")}
+              Tags: {article.tags.map((t: any) => t.name).join(", ")}
             </span>
           </div>
           <div className="flex flex-col gap-3 lg:order-3">
